@@ -5,7 +5,9 @@ namespace Sample_Api.Controllers
     using Microsoft.AspNetCore.Mvc;
     using Sample_Api.Services.CharacterService;
     using Sample_Api.Dtos;
+    using Microsoft.AspNetCore.Authorization;
 
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class CharacterController: ControllerBase

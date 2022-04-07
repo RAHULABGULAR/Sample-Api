@@ -39,7 +39,7 @@ namespace Sample_Api.Services.CharacterService
         {
             var objServiceResponse = new ServiceResponse<List<GetCharacterDto>>();
             var characters=await _context.Characters.ToListAsync();
-            objServiceResponse.data =await _context.Characters.Where(c=>c.IsActive==true).Select(c => _mapper.Map<GetCharacterDto>(c)).ToListAsync();
+            objServiceResponse.data =await _context.Characters.Select(c => _mapper.Map<GetCharacterDto>(c)).ToListAsync();
             return objServiceResponse;
         }
 
